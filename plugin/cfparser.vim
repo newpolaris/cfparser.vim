@@ -25,8 +25,8 @@ let g:cf_pl_ruby = "8"
 let g:cf_pl_scala = "20"
 let g:cf_pl_js = "34"
 
-let g:cf_pl_by_ext =    {'.cpp': g:cf_pl_gpp,
-                        \'.cc': g:cf_pl_gpp,
+let g:cf_pl_by_ext =    {'.cpp': g:cf_pl_gpp14,
+                        \'.cc': g:cf_pl_gpp14,
                         \'.c': g:cf_pl_gcc,
                         \'.pas': g:cf_pl_fpc,
                         \'.php': g:cf_pl_php,
@@ -39,7 +39,7 @@ if !exists('g:cf_cookies_file')
 endif
 
 if !exists('g:cf_default_language')
-    let g:cf_default_language = g:cf_pl_gpp
+    let g:cf_default_language = g:cf_pl_gpp14
 endif
 
 if !exists('g:cf_locale')
