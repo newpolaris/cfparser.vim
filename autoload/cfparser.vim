@@ -59,6 +59,7 @@ endfunction
 "}}}
 function! cfparser#CFDownloadTests() "{{{
     let path = expand('%:p')
+	let name = expand('%<')
     let match = matchlist(path, s:cf_path_regexp)
     
     if empty(match)        
@@ -71,8 +72,8 @@ function! cfparser#CFDownloadTests() "{{{
 
 		let cnt = 0
         for test in tests
-			silent call cfparser#CFLog(test[0], printf(expand('%:p:h') . "/%d.in", cnt))
-			silent call cfparser#CFLog(test[1], printf(expand('%:p:h') . "/%d.out", cnt))
+			silent call cfparser#CFLog(test[0], printf(expand('%:p:h') . "/%s%d.in", name, cnt))
+			silent call cfparser#CFLog(test[1], printf(expand('%:p:h') . "/%s%d.out", name, cnt))
             let cnt += 1
 		endfor	
         echon "\r\r"
